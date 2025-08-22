@@ -1,0 +1,19 @@
+# Cursor IDE ignore patterns
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+.env
+.venv
+venv/
+env/
+risk_simulation.log*

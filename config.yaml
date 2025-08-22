@@ -1,0 +1,45 @@
+game:
+  simulation:
+    iterations: 1000000
+    random_seed: 42
+    batch_size: 10000
+  
+  dice:
+    attacker:
+      count: 3
+      sides: 6
+      min_value: 1
+      max_value: 6
+    defender:
+      count: 2
+      sides: 6
+      min_value: 1
+      max_value: 6
+  
+  strategy:
+    type: "standard_risk"
+    sorting: "descending"
+    comparison_method: "highest_to_highest"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "risk_simulation.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+metrics:
+  enabled: true
+  collection_interval: 1000
+  export_format: "json"
+  dashboard_port: 8080
+
+database:
+  enabled: false
+  connection_string: "sqlite:///risk_results.db"
+  table_name: "simulation_results"
+
+cache:
+  enabled: true
+  ttl: 3600  # 1 hour
+  max_size: 1000
